@@ -1,0 +1,14 @@
+.contact-information {
+  padding: 24px;
+  &__phone-input {
+    .ant-input {
+      border-bottom-left-radius: 0 !important;
+      border-top-left-radius: 0 !important;
+    }
+    .ant-input-group-addon {
+      border-bottom-left-radius: 4px !important;
+      border-top-left-radius: 4px !important;
+    }
+
+  }
+}

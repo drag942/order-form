@@ -1,0 +1,14 @@
+.app {
+  background: #EAEBEF;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif !important;
+  &__content {
+    max-width: 1366px;
+    margin: auto;
+    height: 100%;
+    padding: 32px;
+  }
+}
+
+
+
