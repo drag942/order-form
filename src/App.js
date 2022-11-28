@@ -1,6 +1,6 @@
 import './App.scss';
 import Header from "./sections/header/Header";
-import {Col, Form, Row} from "antd";
+import {Button, Col, Form, Row} from "antd";
 import GeneraInformation from "./sections/general-information/GeneraInformation";
 import Summary from "./sections/summary/Summary";
 import WriterLevel from "./sections/writer-level/WriterLevel";
@@ -44,6 +44,21 @@ function App() {
                           <ContactInformation/>
                       </Col>
                   </Row>
+                  <Button
+                      style={
+                        {
+                            marginLeft: '24px',
+                            width: '245px',
+                            backgroundColor: '#367FD3',
+                            borderRadius: '4px',
+                            fontSize: '16px',
+                            height: '40px'
+                        }
+                      }
+                      type="primary"
+                  >
+                      Submit
+                  </Button>
               </Form>
           </div>
         </div>

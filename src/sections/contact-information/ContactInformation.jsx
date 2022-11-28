@@ -18,7 +18,7 @@ const ContactInformation = () => {
                             ]}
                             tooltip="What do you want others to call you?"
                         >
-                            <Input size="large"/>
+                            <Input size="large" placeholder="Enter Name"/>
                         </Form.Item>
                     </Col>
                     <Col flex="364px" style={{ marginLeft: '24px' }}>
@@ -28,7 +28,7 @@ const ContactInformation = () => {
                             rules={[{ required: true }, { type: 'email', message: 'Email is not valid'}]}
                             tooltip="What do you want others to call you?"
                         >
-                            <Input size="large"/>
+                            <Input size="large" placeholder="Enter your email"/>
                         </Form.Item>
                     </Col>
                 </Row>

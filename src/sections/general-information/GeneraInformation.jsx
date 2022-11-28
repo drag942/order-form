@@ -19,7 +19,7 @@ const GeneraInformation = () => {
                                 ]}
                                 tooltip="What do you want others to call you?"
                             >
-                                <Input size="large"/>
+                                <Input size="large" placeholder="Enter Title"/>
                             </Form.Item>
                         </Col>
                         <Col flex="364px" style={{ marginLeft: '24px' }}>
@@ -34,7 +34,7 @@ const GeneraInformation = () => {
                                 ]}
                                 tooltip="What do you want others to call you?"
                             >
-                                <Select size="large">
+                                <Select size="large" placeholder="Select Content Type">
                                     <Select.Option value="rmb">RMB</Select.Option>
                                     <Select.Option value="dollar">Dollar</Select.Option>
                                 </Select>
@@ -54,7 +54,7 @@ const GeneraInformation = () => {
                                 ]}
                                 tooltip="What do you want others to call you?"
                             >
-                                <Select size="large">
+                                <Select size="large" placeholder="Select Category">
                                     <Select.Option value="rmb">RMB</Select.Option>
                                     <Select.Option value="dollar">Dollar</Select.Option>
                                 </Select>
@@ -75,7 +75,7 @@ const GeneraInformation = () => {
                                 }}
                                 tooltip="What do you want others to call you?"
                             >
-                                <Select size="large" disabled>
+                                <Select size="large" disabled placeholder="Select Count">
                                     <Select.Option value="rmb">RMB</Select.Option>
                                     <Select.Option value="dollar">Dollar</Select.Option>
                                 </Select>
@@ -95,7 +95,7 @@ const GeneraInformation = () => {
                                 ]}
                                 tooltip="What do you want others to call you?"
                             >
-                                <Select size="large">
+                                <Select size="large" placeholder="Select Deadline">
                                     <Select.Option value="rmb">RMB</Select.Option>
                                     <Select.Option value="dollar">Dollar</Select.Option>
                                 </Select>
@@ -112,10 +112,11 @@ const GeneraInformation = () => {
                                     },
                                 ]}
                                 tooltip="What do you want others to call you?"
+                                initialValue="english"
                             >
                                 <Select size="large">
-                                    <Select.Option value="rmb">🇩🇪 RMB</Select.Option>
-                                    <Select.Option value="dollar">🇺🇸 Dollar</Select.Option>
+                                    <Select.Option value="english">🇺🇸 English</Select.Option>
+                                    <Select.Option value="german">🇩🇪 German</Select.Option>
                                 </Select>
                             </Form.Item>
                         </Col>
@@ -125,7 +126,7 @@ const GeneraInformation = () => {
                         name="keywords"
                         tooltip="What do you want others to call you?"
                     >
-                        <Input size="large"/>
+                        <Input size="large" placeholder="Separate each keyword with a comma"/>
                     </Form.Item>
                     <Form.Item
                         label="Brief"
