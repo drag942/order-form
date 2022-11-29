@@ -32,7 +32,7 @@ const writersLevels = [
 
 ];
 
-const WriterLevel = () => {
+const WriterLevel = ({setPricePerWord}) => {
     const [selected, setSelected] = useState();
     return (
         <div className="writer_level">
@@ -41,7 +41,13 @@ const WriterLevel = () => {
                     {writersLevels.map((level) => {
                         return (
                             <Col flex="240px" key={level.key}>
-                                <div className={`writer_level__card${selected === level.key ? '-selected' : ''}`} onClick={() => setSelected(level.key)}>
+                                <div
+                                    className={`writer_level__card${selected === level.key ? '-selected' : ''}`}
+                                    onClick={() => {
+                                        setSelected(level.key)
+                                        setPricePerWord(level.cost)
+                                    }}
+                                >
                                     <div className={`writer_level__card${selected === level.key ? '-selected' : ''}-head`}>
                                         {level.icon}
                                         <span style={{fontWeight: 'bold'}}>{level.name}</span>

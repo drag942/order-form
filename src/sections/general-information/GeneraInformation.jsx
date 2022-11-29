@@ -1,7 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Card, Col, Form, Input, Row, Select} from "antd";
+import {categories, contentTypes, getDatesOfWeek, seoWordCount, smmWordCount, wordCounts} from "../../common/constants";
 
 const GeneraInformation = () => {
+
+    const [stateWordCount, setStateWordCount] = useState(wordCounts);
+
+    const form = Form.useFormInstance();
+    const contentType = Form.useWatch('content-type', form);
+
+    const onSelectContentType = (type) => {
+        form.resetFields(['word-count'])
+        if(type === 'Seo Optimized Content') {
+            setStateWordCount(seoWordCount);
+        } else if (type === 'Social Media Content') {
+            setStateWordCount(smmWordCount);
+        } else {
+            setStateWordCount(wordCounts);
+        }
+    }
+
 
     return (
         <div className="general_information">
@@ -34,9 +52,9 @@ const GeneraInformation = () => {
                                 ]}
                                 tooltip="What do you want others to call you?"
                             >
-                                <Select size="large" placeholder="Select Content Type">
-                                    <Select.Option value="rmb">RMB</Select.Option>
-                                    <Select.Option value="dollar">Dollar</Select.Option>
+                                <Select onSelect={onSelectContentType} size="large" placeholder="Select Content Type">
+                                    {contentTypes.map(item =>
+                                        <Select.Option key={item} value={item}>{item}</Select.Option>)}
                                 </Select>
                             </Form.Item>
                         </Col>
@@ -55,8 +73,8 @@ const GeneraInformation = () => {
                                 tooltip="What do you want others to call you?"
                             >
                                 <Select size="large" placeholder="Select Category">
-                                    <Select.Option value="rmb">RMB</Select.Option>
-                                    <Select.Option value="dollar">Dollar</Select.Option>
+                                    {categories.map(item =>
+                                        <Select.Option key={item} value={item}>{item}</Select.Option>)}
                                 </Select>
                             </Form.Item>
                         </Col>
@@ -67,17 +85,16 @@ const GeneraInformation = () => {
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please choose content type!',
+                                        message: 'Please choose word count!',
                                     },
                                 ]}
                                 style={{
-                                    opacity: 0.5
+                                    opacity: !contentType ? 0.5 : 1
                                 }}
                                 tooltip="What do you want others to call you?"
                             >
-                                <Select size="large" disabled placeholder="Select Count">
-                                    <Select.Option value="rmb">RMB</Select.Option>
-                                    <Select.Option value="dollar">Dollar</Select.Option>
+                                <Select size="large" disabled={!contentType} placeholder="Select Count">
+                                    {stateWordCount.map((item)=> <Select.Option key={item} value={item}>{item}</Select.Option>)}
                                 </Select>
                             </Form.Item>
                         </Col>
@@ -96,8 +113,8 @@ const GeneraInformation = () => {
                                 tooltip="What do you want others to call you?"
                             >
                                 <Select size="large" placeholder="Select Deadline">
-                                    <Select.Option value="rmb">RMB</Select.Option>
-                                    <Select.Option value="dollar">Dollar</Select.Option>
+                                    {getDatesOfWeek().map((item) =>
+                                        <Select.Option key={item} value={item}>{item}</Select.Option>)}
                                 </Select>
                             </Form.Item>
                         </Col>

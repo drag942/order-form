@@ -5,14 +5,20 @@ import GeneraInformation from "./sections/general-information/GeneraInformation"
 import Summary from "./sections/summary/Summary";
 import WriterLevel from "./sections/writer-level/WriterLevel";
 import ContactInformation from "./sections/contact-information/ContactInformation";
+import React, {useEffect, useState} from "react";
+
 
 function App() {
-    const onFinish = (values) => {
-        console.log('Success:', values);
-    };
-    const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-    };
+    const [price, setPrice] = useState(null);
+    const [pricePerWord, setPricePerWord] = useState(null);
+    const [form] = Form.useForm();
+    const wordCount = Form.useWatch('word-count', form);
+
+    useEffect(() => {
+        if(pricePerWord && wordCount) {
+            setPrice(pricePerWord * wordCount);
+        }
+    },[pricePerWord, wordCount])
 
     return (
         <div className="app">
@@ -20,23 +26,22 @@ function App() {
               <Header/>
               <Form
                   name="basic"
-                  onFinish={onFinish}
-                  onFinishFailed={onFinishFailed}
                   autoComplete="off"
                   layout="vertical"
                   requiredMark="optional"
+                  form={form}
               >
                   <Row>
                       <Col flex="850px">
-                          <GeneraInformation/>
+                          <GeneraInformation />
                       </Col>
                       <Col flex="auto">
-                          <Summary/>
+                          <Summary price={price}/>
                       </Col>
                   </Row>
                   <Row>
                       <Col flex="850px">
-                          <WriterLevel/>
+                          <WriterLevel setPricePerWord={setPricePerWord}/>
                       </Col>
                   </Row>
                   <Row>
@@ -56,6 +61,7 @@ function App() {
                         }
                       }
                       type="primary"
+                      htmlType="submit"
                   >
                       Submit
                   </Button>

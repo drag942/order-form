@@ -1,7 +1,13 @@
 import React from 'react';
 import {Card, Col, Divider, Form, Input, Row} from "antd";
 
-const Summary = () => {
+const Summary = ({price}) => {
+    const form = Form.useFormInstance();
+    const contentType = Form.useWatch('content-type', form);
+    const category = Form.useWatch('category', form);
+    const wordCount = Form.useWatch('word-count', form);
+    const deadline = Form.useWatch('deadline', form);
+
     return (
         <div className="summary">
             <Card title="Summary">
@@ -10,7 +16,7 @@ const Summary = () => {
                         <b>Content Type</b>
                     </Col>
                     <Col flex={6}>
-                        <p style={{textAlign: 'right'}}>Blog Post</p>
+                        <p style={{textAlign: 'right'}}>{contentType ? contentType : '-'}</p>
                     </Col>
                 </Row>
                 <Row style={{ marginTop: '16px'}}>
@@ -18,7 +24,7 @@ const Summary = () => {
                         <b>Category</b>
                     </Col>
                     <Col flex={6}>
-                        <p style={{textAlign: 'right'}}>Business & Economy</p>
+                        <p style={{textAlign: 'right'}}>{category ? category : '-'}</p>
                     </Col>
                 </Row>
                 <Row style={{ marginTop: '16px'}}>
@@ -26,7 +32,7 @@ const Summary = () => {
                         <b>Word Count</b>
                     </Col>
                     <Col flex={6}>
-                        <p style={{textAlign: 'right'}}>700 words</p>
+                        <p style={{textAlign: 'right'}}>{wordCount ? `${wordCount} words` : '-'}</p>
                     </Col>
                 </Row>
                 <Row style={{ marginTop: '16px'}}>
@@ -34,7 +40,7 @@ const Summary = () => {
                         <b>Deadline</b>
                     </Col>
                     <Col flex={6}>
-                        <p style={{textAlign: 'right'}}>5 Days (Wed, Oct 26)</p>
+                        <p style={{textAlign: 'right'}}>{deadline ? deadline : '-'}</p>
                     </Col>
                 </Row>
                 <Divider />
@@ -56,7 +62,7 @@ const Summary = () => {
                         <b style={{fontSize: '20px'}}>Price</b>
                     </Col>
                     <Col flex={6} style={{textAlign: 'right'}}>
-                        <b style={{color: '#2460AD', fontSize: '20px'}}>$64</b>
+                        <b style={{color: '#2460AD', fontSize: '20px'}}>{price ? `$${price}` : '-'}</b>
                     </Col>
                 </Row>
             </Card>
