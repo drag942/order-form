@@ -1,6 +1,14 @@
 import React, {useState} from 'react';
 import {Card, Col, Form, Input, Row, Select} from "antd";
-import {categories, contentTypes, getDatesOfWeek, seoWordCount, smmWordCount, wordCounts} from "../../common/constants";
+import {
+    categories,
+    contentTypes,
+    getDatesOfWeek,
+    languages,
+    seoWordCount,
+    smmWordCount,
+    wordCounts
+} from "../../common/constants";
 
 const GeneraInformation = () => {
 
@@ -129,11 +137,11 @@ const GeneraInformation = () => {
                                     },
                                 ]}
                                 tooltip="What do you want others to call you?"
-                                initialValue="english"
+                                initialValue="🇺🇸 English"
                             >
                                 <Select size="large">
-                                    <Select.Option value="english">🇺🇸 English</Select.Option>
-                                    <Select.Option value="german">🇩🇪 German</Select.Option>
+                                    {languages.map((item) =>
+                                        <Select.Option key={item} value={item}>{item}</Select.Option>)}
                                 </Select>
                             </Form.Item>
                         </Col>

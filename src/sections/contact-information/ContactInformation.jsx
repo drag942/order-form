@@ -1,7 +1,22 @@
 import React from 'react';
-import {Card, Col, Form, Input, Row} from "antd";
+import {Card, Col, Form, Input, Row, Select} from "antd";
+import {Option} from "antd/es/mentions";
 
 const ContactInformation = () => {
+    const prefixSelector = (
+        <Form.Item name="prefix" noStyle>
+            <Select
+                size="large"
+                defaultValue="1"
+            >
+                <Option value="1">🇺🇸 +1</Option>
+                <Option value="34">🇪🇸 +34</Option>
+                <Option value="86">🇨🇳 +86</Option>
+                <Option value="33">🇫🇷 +33</Option>
+                <Option value="49">🇩🇪 +49</Option>
+            </Select>
+        </Form.Item>
+    );
     return (
         <div className="contact-information">
             <Card title="Contact Information">
@@ -40,8 +55,11 @@ const ContactInformation = () => {
                             rules={[{ required: true, message: 'Please input your phone number!' }]}
                             className="contact-information__phone-input"
                             tooltip="What do you want others to call you?"
+                            style={{
+                                marginBottom: 0
+                            }}
                         >
-                            <Input addonBefore={<span style={{ fontSize: '16px'}}>🇺🇸 +1</span>} size="large"/>
+                            <Input addonBefore={prefixSelector} size="large"/>
                         </Form.Item>
                     </Col>
                 </Row>

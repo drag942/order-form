@@ -11,7 +11,7 @@ const Summary = ({price}) => {
     return (
         <div className="summary">
             <Card title="Summary">
-                <Row style={{ marginTop: '16px'}}>
+                <Row style={{ marginTop: 0}}>
                     <Col flex={6}>
                         <b>Content Type</b>
                     </Col>
@@ -19,7 +19,7 @@ const Summary = ({price}) => {
                         <p style={{textAlign: 'right'}}>{contentType ? contentType : '-'}</p>
                     </Col>
                 </Row>
-                <Row style={{ marginTop: '16px'}}>
+                <Row style={{ marginTop: 0 }}>
                     <Col flex={6}>
                         <b>Category</b>
                     </Col>
@@ -27,7 +27,7 @@ const Summary = ({price}) => {
                         <p style={{textAlign: 'right'}}>{category ? category : '-'}</p>
                     </Col>
                 </Row>
-                <Row style={{ marginTop: '16px'}}>
+                <Row style={{ marginTop: 0}}>
                     <Col flex={6}>
                         <b>Word Count</b>
                     </Col>
@@ -35,7 +35,7 @@ const Summary = ({price}) => {
                         <p style={{textAlign: 'right'}}>{wordCount ? `${wordCount} words` : '-'}</p>
                     </Col>
                 </Row>
-                <Row style={{ marginTop: '16px'}}>
+                <Row style={{ marginTop: 0}} >
                     <Col flex={6}>
                         <b>Deadline</b>
                     </Col>

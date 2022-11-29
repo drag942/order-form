@@ -1,3 +1,8 @@
 .summary {
   padding: 24px 24px 0 0;
+  position: fixed;
+  width: 478px;
+  .ant-divider-horizontal {
+    margin-top: 0 !important;
+  }
 }
