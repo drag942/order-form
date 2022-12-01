@@ -34,19 +34,11 @@ function App() {
                   <Row>
                       <Col flex="850px">
                           <GeneraInformation />
+                          <WriterLevel setPricePerWord={setPricePerWord}/>
+                          <ContactInformation/>
                       </Col>
                       <Col flex="auto">
                           <Summary price={price}/>
-                      </Col>
-                  </Row>
-                  <Row>
-                      <Col flex="850px">
-                          <WriterLevel setPricePerWord={setPricePerWord}/>
-                      </Col>
-                  </Row>
-                  <Row>
-                      <Col flex="850px">
-                          <ContactInformation/>
                       </Col>
                   </Row>
                   <Button
