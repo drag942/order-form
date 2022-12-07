@@ -11,7 +11,6 @@ const Summary = ({price}) => {
 
     const [searchParams] = useSearchParams();
 
-
     return (
         <div className="summary">
             <Card title="Summary">
