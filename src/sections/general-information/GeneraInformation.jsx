@@ -43,7 +43,6 @@ const GeneraInformation = () => {
                                         message: 'Please input your project title!',
                                     },
                                 ]}
-                                tooltip="What do you want others to call you?"
                             >
                                 <Input size="large" placeholder="Enter Title"/>
                             </Form.Item>
@@ -58,7 +57,6 @@ const GeneraInformation = () => {
                                         message: 'Please choose content type!',
                                     },
                                 ]}
-                                tooltip="What do you want others to call you?"
                             >
                                 <Select onSelect={onSelectContentType} size="large" placeholder="Select Content Type">
                                     {contentTypes.map(item =>
@@ -78,7 +76,6 @@ const GeneraInformation = () => {
                                         message: 'Please input your project title!',
                                     },
                                 ]}
-                                tooltip="What do you want others to call you?"
                             >
                                 <Select size="large" placeholder="Select Category">
                                     {categories.map(item =>
@@ -99,7 +96,6 @@ const GeneraInformation = () => {
                                 style={{
                                     opacity: !contentType ? 0.5 : 1
                                 }}
-                                tooltip="What do you want others to call you?"
                             >
                                 <Select size="large" disabled={!contentType} placeholder="Select Count">
                                     {stateWordCount.map((item)=> <Select.Option key={item} value={item}>{item}</Select.Option>)}
@@ -118,7 +114,6 @@ const GeneraInformation = () => {
                                         message: 'Please choose your project deadline!',
                                     },
                                 ]}
-                                tooltip="What do you want others to call you?"
                             >
                                 <Select size="large" placeholder="Select Deadline">
                                     {getDatesOfWeek().map((item) =>
@@ -136,7 +131,6 @@ const GeneraInformation = () => {
                                         message: 'Please choose your project language!',
                                     },
                                 ]}
-                                tooltip="What do you want others to call you?"
                                 initialValue="🇺🇸 English"
                             >
                                 <Select size="large">
@@ -149,7 +143,6 @@ const GeneraInformation = () => {
                     <Form.Item
                         label="Keywords"
                         name="keywords"
-                        tooltip="What do you want others to call you?"
                     >
                         <Input size="large" placeholder="Separate each keyword with a comma"/>
                     </Form.Item>
@@ -159,7 +152,6 @@ const GeneraInformation = () => {
                         style={{
                             marginBottom: 0
                         }}
-                        tooltip="What do you want others to call you?"
                     >
                         <Input.TextArea
                             maxLength={100}
