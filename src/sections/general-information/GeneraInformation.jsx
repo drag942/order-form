@@ -28,7 +28,6 @@ const GeneraInformation = () => {
         }
     }
 
-
     return (
         <div className="general_information">
             <Card title="General information">
