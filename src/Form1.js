@@ -8,7 +8,7 @@ import ContactInformation from "./sections/contact-information/ContactInformatio
 import React, {useEffect, useState} from "react";
 
 
-function App() {
+function Form1() {
     const [price, setPrice] = useState(null);
     const [pricePerWord, setPricePerWord] = useState(null);
     const [form] = Form.useForm();
@@ -63,4 +63,4 @@ function App() {
   );
 }
 
-export default App;
+export default Form1;

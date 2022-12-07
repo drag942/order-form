@@ -1,4 +1,4 @@
-.ant-input, .ant-select-selector  {
+.ant-input, .ant-select-selector, .ant-input-number-input {
   background: #E5E6E9 !important;
   border-radius: 4px !important;
   box-shadow: none !important;
@@ -10,6 +10,13 @@
 
 .ant-form-item-label {
   padding-bottom: 2px !important;
+}
+
+.ant-input-number {
+  border-radius: 4px !important;
+  &:hover, &:focus {
+    border: 1px solid #d9d9d9 !important;
+  }
 }
 
 .ant-card-head {

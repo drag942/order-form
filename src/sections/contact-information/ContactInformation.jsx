@@ -1,26 +1,25 @@
 import React from 'react';
 import {Card, Col, Form, Input, Row, Select} from "antd";
-import {Option} from "antd/es/mentions";
 
-const ContactInformation = () => {
+const ContactInformation = ({style}) => {
     const prefixSelector = (
-        <Form.Item name="prefix" noStyle>
+        <Form.Item name="country_code" noStyle>
             <Select
                 size="large"
                 defaultValue="1"
             >
-                <Option value="1">🇺🇸 +1</Option>
-                <Option value="34">🇪🇸 +34</Option>
-                <Option value="86">🇨🇳 +86</Option>
-                <Option value="33">🇫🇷 +33</Option>
-                <Option value="49">🇩🇪 +49</Option>
+                <Select.Option value="1">🇺🇸 +1</Select.Option>
+                <Select.Option value="34">🇪🇸 +34</Select.Option>
+                <Select.Option value="86">🇨🇳 +86</Select.Option>
+                <Select.Option value="33">🇫🇷 +33</Select.Option>
+                <Select.Option value="49">🇩🇪 +49</Select.Option>
             </Select>
         </Form.Item>
     );
     return (
-        <div className="contact-information">
+        <div className="contact-information" style={style}>
             <Card title="Contact Information">
-                <Row>
+                <Row justify="space-between">
                     <Col flex="364px">
                         <Form.Item
                             label="Your name"
@@ -31,7 +30,6 @@ const ContactInformation = () => {
                                     message: 'Please input your name!',
                                 },
                             ]}
-                            tooltip="What do you want others to call you?"
                         >
                             <Input size="large" placeholder="Enter Name"/>
                         </Form.Item>
@@ -40,21 +38,19 @@ const ContactInformation = () => {
                         <Form.Item
                             label="Email"
                             name="email"
-                            rules={[{ required: true }, { type: 'email', message: 'Email is not valid'}]}
-                            tooltip="What do you want others to call you?"
+                            rules={[{ required: true, message: 'Please input your email!'  }, { type: 'email', message: 'Email is not valid'}]}
                         >
                             <Input size="large" placeholder="Enter your email"/>
                         </Form.Item>
                     </Col>
                 </Row>
-                <Row>
+                <Row justify="space-between">
                     <Col flex="364px">
                         <Form.Item
                             name="phone"
                             label="Phone Number"
                             rules={[{ required: true, message: 'Please input your phone number!' }]}
                             className="contact-information__phone-input"
-                            tooltip="What do you want others to call you?"
                             style={{
                                 marginBottom: 0
                             }}

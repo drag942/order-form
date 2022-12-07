@@ -4,7 +4,7 @@ import { ReactComponent as LightIcon } from '../../common/images/LightIcon.svg';
 import { ReactComponent as StarIcon } from '../../common/images/StarIcon.svg'
 import { ReactComponent as DiamondIcon } from '../../common/images/DiamondIcon.svg'
 
-const writersLevels = [
+export const writersLevels = [
     {
         name: 'Best Available',
         key: 'best',

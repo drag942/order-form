@@ -8,6 +8,18 @@
     height: 100%;
     padding: 32px 32px 232px;
   }
+
+  &__content2 {
+    max-width: 900px;
+    margin: auto;
+    height: 100%;
+    padding: 32px 0 232px;
+
+    .ant-card-body {
+       padding-left: 73px;
+      padding-right: 73px;
+    }
+  }
 }
 
 
