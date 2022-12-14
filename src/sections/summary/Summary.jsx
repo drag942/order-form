@@ -1,15 +1,12 @@
 import React from 'react';
 import {Card, Col, Divider, Form, Input, Row} from "antd";
-import {useSearchParams} from "react-router-dom";
 
 const Summary = ({price}) => {
     const form = Form.useFormInstance();
-    const contentType = Form.useWatch('content-type', form);
+    const contentType = Form.useWatch('content_type', form);
     const category = Form.useWatch('category', form);
-    const wordCount = Form.useWatch('word-count', form);
+    const wordCount = Form.useWatch('word_count', form);
     const deadline = Form.useWatch('deadline', form);
-
-    const [searchParams] = useSearchParams();
 
     return (
         <div className="summary">
@@ -55,7 +52,7 @@ const Summary = ({price}) => {
                             required: true
                         },
                     ]}
-                    initialValue={searchParams.get('promo')}
+                    initialValue="promo15"
                 >
                     <Input size="large" disabled/>
                 </Form.Item>

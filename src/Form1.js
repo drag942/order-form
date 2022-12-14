@@ -6,6 +6,7 @@ import Summary from "./sections/summary/Summary";
 import WriterLevel from "./sections/writer-level/WriterLevel";
 import ContactInformation from "./sections/contact-information/ContactInformation";
 import React, {useEffect, useState} from "react";
+import axios from "axios";
 
 
 function Form1() {
@@ -20,6 +21,10 @@ function Form1() {
         }
     },[pricePerWord, wordCount])
 
+    const onFinishForm = async (data) => {
+        await axios.post('https://api.skillhub.com/order-form', data)
+    }
+
     return (
         <div className="app">
           <div className="app__content">
@@ -30,6 +35,7 @@ function Form1() {
                   layout="vertical"
                   requiredMark="optional"
                   form={form}
+                  onFinish={onFinishForm}
               >
                   <Row>
                       <Col flex="850px">

@@ -15,10 +15,10 @@ const GeneraInformation = () => {
     const [stateWordCount, setStateWordCount] = useState(wordCounts);
 
     const form = Form.useFormInstance();
-    const contentType = Form.useWatch('content-type', form);
+    const contentType = Form.useWatch('content_type', form);
 
     const onSelectContentType = (type) => {
-        form.resetFields(['word-count'])
+        form.resetFields(['word_count'])
         if(type === 'Seo Optimized Content') {
             setStateWordCount(seoWordCount);
         } else if (type === 'Social Media Content') {
@@ -49,7 +49,7 @@ const GeneraInformation = () => {
                         <Col flex="364px" style={{ marginLeft: '24px' }}>
                             <Form.Item
                                 label="Content Type"
-                                name="content-type"
+                                name="content_type"
                                 rules={[
                                     {
                                         required: true,
@@ -85,7 +85,7 @@ const GeneraInformation = () => {
                         <Col flex="364px" style={{ marginLeft: '24px' }}>
                             <Form.Item
                                 label="Word Count"
-                                name="word-count"
+                                name="word_count"
                                 rules={[
                                     {
                                         required: true,
