@@ -9,7 +9,7 @@ export const writersLevels = [
         name: 'Best Available',
         key: 'best',
         icon: <LightIcon/>,
-        text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+        text: 'You’ll get the best writer available at the moment to fulfill your order.To fulfill your order, you’ll receive the best writer available at the moment.',
         isPopular: false,
         cost: 0.02
     },
@@ -17,7 +17,7 @@ export const writersLevels = [
         name: 'Top Writer',
         key: 'top',
         icon: <StarIcon/>,
-        text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+        text: 'Your order will be fulfilled by a top 30 writer. Writers are ranked by quantity of delivered texts and customer ratings.',
         isPopular: true,
         cost: 0.05
     },
@@ -25,7 +25,7 @@ export const writersLevels = [
         name: 'First Rate Writer',
         key: 'first_rate',
         icon: <DiamondIcon/>,
-        text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+        text: 'A top 10 writer will fulfill your order. Writers are ranked by quantity of delivered texts and customer ratings.',
         isPopular: false,
         cost: 0.09
     },

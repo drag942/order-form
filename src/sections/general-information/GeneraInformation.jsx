@@ -155,7 +155,7 @@ const GeneraInformation = () => {
                         <Input.TextArea
                             maxLength={100}
                             style={{ height: 156, resize: 'none', fontSize: '16px' }}
-                            placeholder="Enter your briefing information"
+                            placeholder="Please, provide detailed requirements for your content.Describe the target audience, tone of voice, purpose of the content (informative, SEO, entertaining), technical requirements (characters limit for H1, H2; headings), brand content style."
                         />
                     </Form.Item>
             </Card>

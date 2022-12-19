@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, Col, Form, Row} from "antd";
 import Header from "./sections/header/Header";
 import ContactInformation from "./sections/contact-information/ContactInformation";
 import GeneralInformation2 from "./sections/general-information/GeneralInformation2";
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const Form2 = () => {
     const [form] = Form.useForm();
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
+
+    const onFinishForm = async (data) => {
+        await axios.post('https://api.skillhub.com/order-form', data).then(() => navigate('/thank-you')).catch(() => setError('Server error'))
+    }
+
     return (
         <div className="app">
             <div className="app__content2">
@@ -16,6 +25,7 @@ const Form2 = () => {
                     layout="vertical"
                     requiredMark="optional"
                     form={form}
+                    onFinish={onFinishForm}
                 >
                     <Row>
                         <Col flex="900px">
@@ -40,6 +50,7 @@ const Form2 = () => {
                     >
                         Submit
                     </Button>
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
                 </Form>
             </div>
         </div>

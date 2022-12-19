@@ -159,7 +159,7 @@ const GeneralInformation2 = () => {
                 <Row justify="space-between">
                     <Col flex="364px">
                         <Form.Item
-                            label="Price"
+                            label="Price ($)"
                             name="price"
                             rules={[
                                 {
@@ -168,6 +168,7 @@ const GeneralInformation2 = () => {
                                 },
                             ]}
                             style={{ opacity: !(wordCont && pricePerWord) ? 0.5 : 1 }}
+                            tooltip="The price cannot be lower than 20% than the declared"
                         >
                             <InputNumber
                                 size="large"
@@ -212,7 +213,7 @@ const GeneralInformation2 = () => {
                     <Input.TextArea
                         maxLength={100}
                         style={{ height: 156, resize: 'none', fontSize: '16px' }}
-                        placeholder="Enter your briefing information"
+                        placeholder="Please, provide detailed requirements for your content.Describe the target audience, tone of voice, purpose of the content (informative, SEO, entertaining), technical requirements (characters limit for H1, H2; headings), brand content style."
                     />
                 </Form.Item>
             </Card>

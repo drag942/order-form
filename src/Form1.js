@@ -7,6 +7,7 @@ import WriterLevel from "./sections/writer-level/WriterLevel";
 import ContactInformation from "./sections/contact-information/ContactInformation";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 
 function Form1() {
@@ -14,6 +15,8 @@ function Form1() {
     const [pricePerWord, setPricePerWord] = useState(null);
     const [form] = Form.useForm();
     const wordCount = Form.useWatch('word-count', form);
+    const navigate = useNavigate();
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         if(pricePerWord && wordCount) {
@@ -22,7 +25,7 @@ function Form1() {
     },[pricePerWord, wordCount])
 
     const onFinishForm = async (data) => {
-        await axios.post('https://api.skillhub.com/order-form', data)
+        await axios.post('https://api.skillhub.com/order-form', data).then(() => navigate('/thank-you')).catch(() => setError('Server error'))
     }
 
     return (
@@ -63,6 +66,7 @@ function Form1() {
                   >
                       Submit
                   </Button>
+                  {error && <p style={{ color: 'red' }}>{error}</p>}
               </Form>
           </div>
         </div>
