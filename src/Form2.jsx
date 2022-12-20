@@ -12,7 +12,7 @@ const Form2 = () => {
     const navigate = useNavigate();
 
     const onFinishForm = async (data) => {
-        await axios.post('https://api.skillhub.com/order-form', data).then(() => navigate('/thank-you')).catch(() => setError('Server error'))
+        await axios.post('https://api.skillhub.com/order-form/', data).then(() => navigate('/thank-you')).catch(() => setError('Server error'))
     }
 
     return (

@@ -14,7 +14,7 @@ function Form1() {
     const [price, setPrice] = useState(null);
     const [pricePerWord, setPricePerWord] = useState(null);
     const [form] = Form.useForm();
-    const wordCount = Form.useWatch('word-count', form);
+    const wordCount = Form.useWatch('word_count', form);
     const navigate = useNavigate();
     const [error, setError] = useState(null)
 
@@ -25,7 +25,10 @@ function Form1() {
     },[pricePerWord, wordCount])
 
     const onFinishForm = async (data) => {
-        await axios.post('https://api.skillhub.com/order-form', data).then(() => navigate('/thank-you')).catch(() => setError('Server error'))
+        await axios.post('https://api.skillhub.com/order-form/', {
+            ...data,
+            price
+        }).then(() => navigate('/thank-you')).catch(() => setError('Server error'))
     }
 
     return (
