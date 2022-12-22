@@ -20,7 +20,7 @@ function Form1() {
 
     useEffect(() => {
         if(pricePerWord && wordCount) {
-            setPrice(pricePerWord * wordCount);
+            setPrice(Math.round((pricePerWord * wordCount) * 0.85));
         }
     },[pricePerWord, wordCount])
 
@@ -69,7 +69,7 @@ function Form1() {
                   >
                       Submit
                   </Button>
-                  {error && <p style={{ color: 'red' }}>{error}</p>}
+                  {error && <p style={{ color: 'red',marginLeft: '24px', marginTop: '10px' }}>{error}</p>}
               </Form>
           </div>
         </div>
