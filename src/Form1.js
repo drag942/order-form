@@ -27,7 +27,8 @@ function Form1() {
     const onFinishForm = async (data) => {
         await axios.post('https://api.skillhub.com/order-form/', {
             ...data,
-            price
+            price,
+            form_type: 'cws'
         }).then(() => navigate('/thank-you')).catch(() => setError('Server error'))
     }
 
