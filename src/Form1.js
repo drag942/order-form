@@ -7,6 +7,7 @@ import WriterLevel from "./sections/writer-level/WriterLevel";
 import ContactInformation from "./sections/contact-information/ContactInformation";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 
 function Form1() {
@@ -16,6 +17,8 @@ function Form1() {
     const [form] = Form.useForm();
     const wordCount = Form.useWatch('word_count', form);
     const [error, setError] = useState(null)
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         if(pricePerWord && wordCount) {
@@ -29,7 +32,7 @@ function Form1() {
             price,
             form_type: 'cws',
             writer_level: writerLevel
-        }).then(() =>  window.location.replace('https://skillhub.com/content-writing-service')).catch(() => setError('Server error'))
+        }).then(() => navigate('/thank-you')).catch(() => setError('Server error'))
     }
 
     return (

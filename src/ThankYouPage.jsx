@@ -33,7 +33,7 @@ const ThankYouPage = () => {
                     }
                     type="primary"
                     htmlType="submit"
-                    onClick={() => navigate('/')}
+                    onClick={() => window.location.replace('https://skillhub.com/content-writing-service')}
                 >
                     Go to Homepage
                 </Button>

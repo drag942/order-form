@@ -4,15 +4,17 @@ import Header from "./sections/header/Header";
 import ContactInformation from "./sections/contact-information/ContactInformation";
 import GeneralInformation2 from "./sections/general-information/GeneralInformation2";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const Form2 = () => {
     const [form] = Form.useForm();
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
     const onFinishForm = async (data) => {
         await axios.post('https://api.skillhub.com/order-form/', {
             ...data,
             form_type: 'freelance'
-        }).then(() => window.location.replace('https://skillhub.com/content-writing-service')).catch(() => setError('Server error'))
+        }).then(() => navigate('/thank-you')).catch(() => setError('Server error'))
     }
 
     return (
