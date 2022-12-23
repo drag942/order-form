@@ -12,6 +12,7 @@ import axios from "axios";
 function Form1() {
     const [price, setPrice] = useState(null);
     const [pricePerWord, setPricePerWord] = useState(null);
+    const [writerLevel, setWriterLevel] = useState(null);
     const [form] = Form.useForm();
     const wordCount = Form.useWatch('word_count', form);
     const [error, setError] = useState(null)
@@ -26,7 +27,8 @@ function Form1() {
         await axios.post('https://api.skillhub.com/order-form/', {
             ...data,
             price,
-            form_type: 'cws'
+            form_type: 'cws',
+            writer_level: writerLevel
         }).then(() =>  window.location.replace('https://skillhub.com/content-writing-service')).catch(() => setError('Server error'))
     }
 
@@ -45,7 +47,7 @@ function Form1() {
                   <Row>
                       <Col flex="850px">
                           <GeneraInformation />
-                          <WriterLevel setPricePerWord={setPricePerWord}/>
+                          <WriterLevel setPricePerWord={setPricePerWord} setWriterLevel={setWriterLevel}/>
                           <ContactInformation/>
                       </Col>
                       <Col flex="auto">

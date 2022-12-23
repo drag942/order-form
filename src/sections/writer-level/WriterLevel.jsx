@@ -32,7 +32,7 @@ export const writersLevels = [
 
 ];
 
-const WriterLevel = ({setPricePerWord}) => {
+const WriterLevel = ({setPricePerWord, setWriterLevel}) => {
     const [selected, setSelected] = useState();
     return (
         <div className="writer_level">
@@ -46,6 +46,7 @@ const WriterLevel = ({setPricePerWord}) => {
                                     onClick={() => {
                                         setSelected(level.key)
                                         setPricePerWord(level.cost)
+                                        setWriterLevel(level.name)
                                     }}
                                 >
                                     <div className={`writer_level__card${selected === level.key ? '-selected' : ''}-head`}>

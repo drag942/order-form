@@ -3,10 +3,9 @@ import {Card, Col, Form, Input, Row, Select} from "antd";
 
 const ContactInformation = ({style}) => {
     const prefixSelector = (
-        <Form.Item name="country_code" noStyle>
+        <Form.Item name="country_code" initialValue="1" noStyle>
             <Select
                 size="large"
-                defaultValue="1"
             >
                 <Select.Option value="1">🇺🇸 +1</Select.Option>
                 <Select.Option value="34">🇪🇸 +34</Select.Option>

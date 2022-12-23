@@ -48,11 +48,26 @@ export const contentTypes = [
 ]
 
 export const languages = [
-    '🇺🇸 English',
-    '🇪🇸 Spanish',
-    '🇨🇳 Chinese',
-    '🇫🇷 French',
-    '🇩🇪 German',
+    {
+        label: '🇺🇸 English',
+        value: 'english'
+    },
+    {
+        label: '🇪🇸 Spanish',
+        value: 'spanish'
+    },
+    {
+        label:  '🇨🇳 Chinese',
+        value: 'chinese'
+    },
+    {
+        label: '🇫🇷 French',
+        value: 'french'
+    },
+    {
+        label: '🇩🇪 German',
+        value: 'german'
+    },
 ]
 
 export const categories = ['Arts & Crafts', 'Beauty', 'Business & Economy', 'Cars & Transportation', 'Casino Gaming', 'Computer & Software', 'Craftsmanship', 'Editing', 'Education', 'Electronic Entertainment', 'Electronics', 'Employment & Careers', 'Entertainment', 'Environment', 'Events', 'Fashion', 'Finance', 'Fitness & Lifestyle', 'Food & Beverages', 'Gardening & Plants', 'Health & Medicine', 'History & Politics', 'Hobbies', 'Home & Living', 'Horoscopes & Fortunes', 'Hospitality', 'Internet', 'Jewelry & Precious Metals', 'Languages & Translations (into US English)', 'Law', 'Literature', 'Logistics', 'Love & Relationships', 'Marketing', 'Mature Subject Matter', 'Media & Telecommunication', 'Miscellaneous', 'Music & Dance', 'News & Current Events', 'Parenting & Family', 'Pets & Animals', 'Product & Category Descriptions', 'Real Estate', 'Science', 'Shopping', 'Social Media Posts', 'Spiritualism & Philosophy', 'Sports', 'Travel & Tourism', 'Website Content']

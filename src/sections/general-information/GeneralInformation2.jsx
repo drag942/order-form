@@ -188,11 +188,11 @@ const GeneralInformation2 = () => {
                                     message: 'Please choose your project language!',
                                 },
                             ]}
-                            initialValue="🇺🇸 English"
+                            initialValue="english"
                         >
                             <Select size="large">
                                 {languages.map((item) =>
-                                    <Select.Option key={item} value={item}>{item}</Select.Option>)}
+                                    <Select.Option key={item.value} value={item.value}>{item.label}</Select.Option>)}
                             </Select>
                         </Form.Item>
                     </Col>
