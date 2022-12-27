@@ -25,8 +25,8 @@ root.render(
       >
           <HashRouter>
               <Routes>
-                  <Route path="form1" element={<Form1/>}/>
-                  <Route path="form2" element={<Form2/>}/>
+                  <Route path="cws" element={<Form1/>}/>
+                  <Route path="freelance" element={<Form2/>}/>
                   <Route path="thank-you" element={<ThankYouPage/>}/>
               </Routes>
           </HashRouter>

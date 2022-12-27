@@ -8,9 +8,11 @@ import ContactInformation from "./sections/contact-information/ContactInformatio
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 
-function Form1() {
+
+function    Form1() {
     const [price, setPrice] = useState(null);
     const [pricePerWord, setPricePerWord] = useState(null);
     const [writerLevel, setWriterLevel] = useState(null);
@@ -27,6 +29,9 @@ function Form1() {
     },[pricePerWord, wordCount])
 
     const onFinishForm = async (data) => {
+        window.dataLayer.push({
+            event: 'cw_order_form_submit',
+        });
         await axios.post('https://api.skillhub.com/order-form/', {
             ...data,
             price,
@@ -37,6 +42,10 @@ function Form1() {
 
     return (
         <div className="app">
+          <Helmet>
+              <title>SkillHub Content writing service</title>
+              <meta name="description" content="SkillHub Content writing service"/>
+          </Helmet>
           <div className="app__content">
               <Header/>
               <Form
